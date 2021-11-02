@@ -1,0 +1,28 @@
+<div class="row">
+<h1>Финальный учёт проведённых работ</h1>
+<select [(ngModel)]="car_avto" class="form-select col" aria-label="Default select example">
+  <option selected value="1">Марка автомобиля</option>
+  <option value="Subaru">Subaru</option>
+  <option value="Audi">Audi</option>
+  <option value="Lada">Lada</option>
+</select>
+<select [(ngModel)]="car_wrk" class="form-select col" aria-label="Default select example">
+  <option selected>Область работ</option>
+  <option value="Дрыгатель">Дрыгатель</option>
+  <option value="Коробка пердач">Коробка пердач</option>
+  <option value="Салон автомобиля">Салон автомобиля</option>
+</select>
+</div>
+<div class="form-floating mb-3">
+  <input [(ngModel)]="car_price" type="number" class="form-control" id="floatingInput" placeholder="000">
+  <label for="floatingInput">Цена работ</label>
+</div>
+<div class="button">
+  <button (click)="wrkPush()">Добавить работу</button>
+</div>
+<div>
+  <ul class="list-group">
+    <app-finalorder *ngFor = "let wrkElem of items"
+      [items]="wrkElem"></app-finalorder>
+  </ul>
+</div>
